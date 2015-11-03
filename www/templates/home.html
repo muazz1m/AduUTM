@@ -1,0 +1,46 @@
+<ion-view view-title="">
+	<ion-nav-bar class="bar-clear">
+	  		<ion-nav-back-button></ion-nav-back-button>
+	  		<ion-nav-buttons side="left">
+	  			<button class="button button-icon icon ion-android-menu" menu-toggle="left"></button>
+	  		</ion-nav-buttons>
+	  	</ion-nav-bar>
+	<ion-content class="bg-custom no-header">
+		<div align="center" class="bg-custom2" style="box-shadow: 1px 1px 7px black;">
+	      <img class="logoUTM" style="padding-top:20px;" src="img/logoUTM.png">
+	      <h4 style="padding-bottom:50px; margin-top:-30px">e-Customer Support</h4>
+	    </div>
+	    	<!--FAB Button-->
+	    <div align="right" class="margin3">
+		  <button class="button fab-custom button-icon icon ion-android-create pull-right" ng-click="newAdu()"></button>
+		</div>
+
+		<!--list card:show user information-->
+		<div class="list card">
+		
+		  <div class="item item-avatar">
+		    <img src="img/dp.png">
+		    <h2>Muazzim Bin Mansor Sanusi</h2>
+		    <p>A13CS0060</p>
+		  </div>
+		  <div class="item item-body">
+		    <h2>You've issued :</h2>
+		    <p>9 Complaints</p>
+		  </div>
+		
+		  <div class="item tabs tabs-secondary tabs-icon-left">
+		    <a class="tab-item" href="#/menu/list">
+		      <i class="icon ion-android-list"></i>
+		      View Complaints
+		    </a>
+		    
+		    <a class="tab-item" href="" ng-click="logout()">
+		      <i class="icon ion-android-exit"></i>
+		      Logout
+		    </a>
+		  </div>
+		
+		</div>
+	</ion-content>
+
+</ion-view>

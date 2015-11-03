@@ -1,0 +1,98 @@
+/* Empty. Add your own CSS if you like */
+
+.logoUTM{
+	height: 50%;
+	width: 80%;
+	margin: 35px 10px;
+}
+
+.bg-custom{
+	background: #5D001D;
+}
+
+.bg-custom2{
+	background: #F5F5F5;
+}
+
+.font-custom{
+	color: white;
+}
+
+.font-custom2{
+	color: #5D001D;
+}
+
+.border2{
+	border-color: black;
+}
+
+.margin{
+	margin:0 0 10px 0;
+}
+
+.margin2{
+	margin:0 0 25px -10px;
+}
+
+.button-custom{
+	background: #FFA306;
+	color:white;
+}
+
+.fab-custom{
+	background: #FFA306;
+	border-radius: 100px;
+	box-shadow: 3px 2px 10px black;
+	height: 65px;
+	width: 65px;
+	margin:-45px 50px 0 0;
+	color: white;
+}
+
+.fab-custom2{
+	background: white;
+	border-radius: 100px;
+	box-shadow: 3px 2px 10px black;
+	height: 65px;
+	width: 65px;
+	margin:-40px 15px 0 0;
+}
+
+.bar.bar-clear .button {
+	color: #5D001D !important; 
+ }
+
+ .no-border{
+ 	border:0;
+ }
+
+ .footer-clear{
+ 	background: none;
+ }
+
+.popup-custom .popup{
+	background: white;
+}
+
+/*.scroll-content {
+  overflow: visible !important;
+}*/
+
+/*slide-in-right animation*/
+.slide-in-right {
+  -webkit-transform: translateX(100%);
+    transform: translateX(100%); }
+
+.slide-in-right.ng-enter, .slide-in-right > .ng-enter {
+  -webkit-transition: all cubic-bezier(0.1, 0.7, 0.1, 1) 400ms;
+  transition: all cubic-bezier(0.1, 0.7, 0.1, 1) 400ms; }
+
+.slide-in-right.ng-enter-active, .slide-in-right > .ng-enter-active {
+  -webkit-transform: translateX(0);
+    transform: translateX(0); }
+
+.slide-in-right.ng-leave, .slide-in-right > .ng-leave {
+  -webkit-transition: all ease-in-out 250ms;
+  transition: all ease-in-out 250ms; }
+
+  /*hide fab button*/

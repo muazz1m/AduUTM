@@ -1,0 +1,15 @@
+<ion-view view-title="Complaint List" ng-init="list()">
+	<ion-content class="padding bg-custom">
+		<ion-list>
+		  <ion-item class="margin item-icon-right" ng-repeat="(key,adu) in adus">
+		    <h2>{{adu.description}}, {{adu.location}}</h2>
+		    <p>{{adu.submited_at | date: medium}}</p>
+		    <button class="button button-clear icon ion-android-delete padding" ng-click="removeAdu(key)"></button>
+		  </ion-item >
+		</ion-list>
+	</ion-content>
+	<!--FAB Button-->
+	<div class="bar bar-footer footer-clear" ng-class="{'bar-footer-slide-away': hideFAB}">
+	  <button class="button fab-custom2 button-icon icon ion-android-create font-custom2 pull-right" ng-click="newAdu()"></button>
+	</div>
+</ion-view>

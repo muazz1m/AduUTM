@@ -1,0 +1,32 @@
+<div class="modal" title="">
+	<ion-header-bar class="bar bar-stable bar-secondary">
+		<button class="button button-icon icon ion-android-close" ng-click="closeModal()"></button>
+		<h1 class="title">{{modalTitle}}</h1>
+		  
+	</ion-header-bar>
+	<ion-content class="padding bg-custom">
+		<form ng-submit="submitAdu(adu)">
+			<div class="list">
+				<label class="item item-input item-select margin">
+			        <div class="input-label">
+			          Problem Type
+			        </div>
+			        <select ng-model="adu.type">
+			          <option selected>CIVIL</option>
+			          <option>ELECTRICAL</option>
+			          <option>OTHERS</option>
+			        </select>
+			      </label>
+				<label class="item item-input margin">
+					<textarea style="height:100px;" placeholder="Description" ng-model="adu.description"></textarea>
+				</label>
+				<label class="item item-input margin">
+					<input type="text" placeholder="Location" ng-model="adu.location"/>
+				</label>
+			</div>
+			<div>
+				<button type="submit" class="button button-balanced button-block">Submit Complaint</button>
+			</div>
+		</form>	      	
+	</ion-content>	
+</div>

@@ -1,0 +1,33 @@
+<ion-view title="Login" hide-back-button="true" hide-nav-bar="true">
+
+  <ion-content class="padding bg-custom2">
+  <br>
+    <div align="center" >
+      <img class="logoUTM" src="img/logoUTM.png">
+      <h4>e-Customer Support</h4>
+    </div>
+    <div class="list padding">
+      <label class="item item-input item-select border2 margin">
+        <div class="input-label">
+          User Type
+        </div>
+        <select>
+          <option selected>Student</option>
+          <option>Staff</option>
+          <option>Guest</option>
+        </select>
+      </label>
+      <br>
+      <label class="item item-input border2 margin">
+        <input type="text" placeholder="Username" ng-model="username" >
+      </label>
+      <label class="item item-input border2 margin">
+        <input type="password" placeholder="Password" ng-model="password">
+      </label>
+      <br>
+      <button class="button button-full bg-custom font-custom" ng-click="login(username,password)">
+      Login
+    </button>
+    
+  </ion-content>
+</ion-view>
