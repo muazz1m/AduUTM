@@ -2,7 +2,7 @@
 	<ion-content class="padding bg-custom">
 		<ion-list>
 		  <ion-item class="margin item-icon-right" ng-repeat="(key,adu) in adus">
-		    <h2>{{adu.description}}, {{adu.location}}</h2>
+		    <h2>{{adu.description}}, {{adu.location}}, {{adu.$getINdex()}}</h2>
 		    <p>{{adu.submited_at | date: medium}}</p>
 		    <button class="button button-clear icon ion-android-delete padding" ng-click="removeAdu(key)"></button>
 		  </ion-item >
