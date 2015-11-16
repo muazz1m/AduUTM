@@ -11,10 +11,10 @@
 			        <div class="input-label">
 			          Problem Type
 			        </div>
-			        <select ng-model="adu.type">
-			          <option selected>CIVIL</option>
+			        <select ng-model="adu.type" required ng-options='option.value as option.name for option in typeOptions'>
+			          <!-- <option selected>CIVIL</option>
 			          <option>ELECTRICAL</option>
-			          <option>OTHERS</option>
+			          <option>OTHERS</option> -->
 			        </select>
 			      </label>
 				<label class="item item-input margin">

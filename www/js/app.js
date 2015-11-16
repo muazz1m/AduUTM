@@ -76,8 +76,8 @@ angular.module('starter', ['ionic','starter.controllers','starter.services','fir
       url: '/help',
       views:{
         'menuContent':{
-          templateUrl: 'templates/help.html'
-        
+          templateUrl: 'templates/help.html',
+          controller: 'EmailCtrl'
         }
       }
     })
