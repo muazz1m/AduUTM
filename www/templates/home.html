@@ -1,4 +1,4 @@
-<ion-view view-title="">
+<ion-view view-title="" onload="initialized()">
 	<ion-nav-bar class="bar-clear">
 	  		<ion-nav-back-button></ion-nav-back-button>
 	  		<ion-nav-buttons side="left">
@@ -18,10 +18,10 @@
 		<!--list card:show user information-->
 		<div class="list card">
 		
-		  <div class="item item-avatar">
+		  <div class="item item-avatar" ng-init="profile()">
 		    <img src="img/dp.png">
-		    <h2>Muazzim Bin Mansor Sanusi</h2>
-		    <p>A13CS0060</p>
+		    <h2 ng-model="profile.name">{{profile.name}}</h2>
+		    <p>{{profile.matriks}}</p>
 		  </div>
 		  <div class="item item-body" ng-init="list()">
 		    <h2>You've issued :</h2>

@@ -4,13 +4,13 @@ angular.module('starter.controllers',[])
 .controller('LoginCtrl', function(FirebaseService, $firebaseAuth, $state, $scope, $ionicHistory){
 	
 	var fb = $firebaseAuth(FirebaseService);
-
 	//Check if user is logged in; one time login
     $scope.user = fb.$getAuth();
     if (!$scope.user) {
         $state.this = 'login';
     }else{
     	$state.go('menu.home');
+
     	//--to prevent user go back to login when tap the back button--//
     	$ionicHistory.nextViewOptions({
 		  disableAnimate: true,
@@ -37,6 +37,7 @@ angular.module('starter.controllers',[])
 			password: password
 		}).then(function(authData) {
 			$state.go('menu.home');
+			console.log(username);
 		}).catch(function(error) {
 			alert('Error : ' + error);
 		})
@@ -44,10 +45,11 @@ angular.module('starter.controllers',[])
 })
 
 //main controller
-.controller('AduCtrl', function($ionicModal, $state, $scope, FirebaseService, $firebaseObject, $ionicPopup, $cordovaToast, $ionicScrollDelegate, $rootScope){
+.controller('AduCtrl', function($ionicModal, $state, $scope, FirebaseService, $firebaseObject, $ionicPopup, $cordovaToast, $ionicHistory, $timeout){
 
 	var fb = FirebaseService.getAuth();
 	var path = FirebaseService.child("users").child(fb.uid).child("adu");
+	var path2 = FirebaseService.child("users").child(fb.uid).child("profile");
 
 	//init form modal
 	$ionicModal.fromTemplateUrl('templates/_form.html', function(modal) {
@@ -65,6 +67,14 @@ angular.module('starter.controllers',[])
     { name: 'OTHERS', value: 'others' }
     ];
     $scope.adu = {type : $scope.typeOptions[0].value};
+
+    //home detail(profile)
+    $scope.profile = function(){
+    	
+			var syncObject2 = $firebaseObject(path2);
+			syncObject2.$bindTo($scope, "profile");
+			console.log(fb.uid);
+    }
 
     //new complaint
 	$scope.newAdu = function(){
@@ -113,6 +123,8 @@ angular.module('starter.controllers',[])
 		if(fb){
 			var syncObject = $firebaseObject(path);
 			syncObject.$bindTo($scope, "adus");
+			/*var syncObject2 = $firebaseObject(path2);
+			syncObject2.$bindTo($scope, "profile");*/
 			//count total number of complaints
 			path.on("value", function(snapshot) {
 				var count = 0;
@@ -163,6 +175,11 @@ angular.module('starter.controllers',[])
 	     if(res) {
 	       FirebaseService.unauth();
 			$state.go('login');
+			// Clear all cache and history
+		    $timeout(function () {
+		        $ionicHistory.clearCache();
+		        $ionicHistory.clearHistory();
+		    }, 1500)
 	     } else {
 	       return;
 	     }
